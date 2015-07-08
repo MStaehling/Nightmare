@@ -5,7 +5,8 @@
     "modernizr": "~2.8.1",
     "restangular": "~1.5.1",
     "firebase": "~2.2.7",
-    "angular": "~1.4.2"
+    "angular": "~1.4.2",
+    "angular-route": "~1.4.2"
   },
   "devDependencies": {
     "chai": "~3.0.0",

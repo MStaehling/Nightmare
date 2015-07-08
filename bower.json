@@ -2,7 +2,8 @@
   "name": "nightmare",
   "dependencies": {
     "bootstrap-sass": "3.3.4",
-    "modernizr": "~2.8.1"
+    "modernizr": "~2.8.1",
+    "restangular": "~1.5.1"
   },
   "devDependencies": {
     "chai": "~3.0.0",

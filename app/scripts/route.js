@@ -1,11 +1,10 @@
+/* global angular */
 (function() {
   'use strict';
 
   angular
-    .module('nightmare')
-    .config(routeConfig);
-
-  function routeConfig($routeProvider) {
+    .module('nightmare', ['ngRoute', 'restangular'])
+    .config(function($routeProvider) {
     $routeProvider
       .when('/home', {
         templateUrl: 'app/views/home.html'
@@ -27,6 +26,6 @@
       .otherwise({
         redirectTo: '/home'
       });
-  }
+  });
 
 })();

@@ -1,4 +1,4 @@
-// generated on 2015-07-08 using generator-gulp-webapp 1.0.1
+// generated on 2015-07-09 using generator-gulp-webapp 1.0.1
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';

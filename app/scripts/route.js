@@ -2,7 +2,7 @@
 (function() {
   'use strict';
 
-  angular
+   angular
     .module('nightmare', ['ngRoute', 'restangular'])
     .config(function($routeProvider) {
     $routeProvider

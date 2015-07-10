@@ -3,7 +3,7 @@
 (function(){
     'use strict';
 
-angular.module('tiy-upvote')
+angular.module('nightmare')
 
 .controller('MainController', function($scope){
   var firebase = new Firebase('https://fiery-inferno-4540.firebaseio.com');

@@ -99,14 +99,16 @@ gulp.task('serve', ['styles', 'fonts'], () => {
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['.tmp', 'app'],
+      baseDir: ['app', '.tmp'],
       routes: {
         '/bower_components': 'bower_components'
-      }
+      },
+      directory: true
     }
   });
 
   gulp.watch([
+    'app/views/*.html',
     'app/*.html',
     'app/scripts/**/*.js',
     'app/images/**/*',

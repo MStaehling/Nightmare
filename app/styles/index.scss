@@ -1,0 +1,31 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+.container {
+  .header {
+    .nav {
+      display: inline-block;
+     li {
+        display: inline-block;
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+    ul {
+      list-style: none;
+      li {
+        display: inline-block;
+        a {
+        }
+      }
+    }
+  }
+}
+//position footer at bottom of page from http://stackoverflow.com/questions/21324395/bootstrap-3-flush-footer-to-bottom-not-fixed

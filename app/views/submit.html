@@ -101,7 +101,7 @@ function geolocate() {
 // [END region_geolocation]
 
     </script> -->
-<form>
+<form ng-submit="submit()">
   <div class="address">
     <label for="stop">Stop</label>
     <input type="text" id="stop" placeholder="Enter name of stop">
@@ -151,5 +151,5 @@ function geolocate() {
     <label for="info">If there's any additional information that hasn't been mentioned please put it here.</label>
     <textarea style="width:100%" id="info" name="info"></textarea>
   </div><!-- .info -->
-<button class="pull-right">Submit</button>
+  <input type="submit" id="submit" value="Submit" class="pull-right"/>
 </form>

@@ -15,7 +15,8 @@
         templateUrl: '/views/submit.html'
       })
       .when('/stops', {
-        templateUrl: '/views/stops.html'
+        templateUrl: '/views/stops.html',
+        controller: 'SubmitController'
       })
       .when('/search', {
         templateUrl: '/views/search.html'

@@ -25,6 +25,6 @@
         console.log(this.submit);
         this.submit = {};
       };
-    })
+    });
 
 })();

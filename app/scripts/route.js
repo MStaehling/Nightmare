@@ -12,11 +12,12 @@
         // controllerAs: 'main'
       })
       .when('/submit', {
-        templateUrl: '/views/submit.html'
+        templateUrl: '/views/submit.html',
+        controller: 'SubmitController'
       })
       .when('/stops', {
         templateUrl: '/views/stops.html',
-        controller: 'SubmitController'
+        controller: 'CommentController'
       })
       .when('/search', {
         templateUrl: '/views/search.html'

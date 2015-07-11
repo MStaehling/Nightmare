@@ -44,7 +44,10 @@
   <label for="delivery_instructions">Is there unique delivery instructions for this stop whether it is a delivery time window or a not so obvious way to make the delivery like a service entrance is on a different block then the normal entrance.</label>
   <textarea style="width:100%" id="delivery_instructions" name="delivery_instructions"></textarea>
 </div><!-- .delivery -->
-<form ng-controller="SubmitController" ng-submit="submit.addSubmit(stop)">
+<div class="comments">
+  <p>{{submit.addSubmit(stop)}}</p>
+</div><!-- .comments -->
+<form ng-submit="submit.addSubmit(stop)">
   <div class="info">
     <label for="info">If there's any additional information that hasn't been mentioned please put it here.</label>
     <textarea style="width:100%" id="info" name="info"></textarea>

@@ -1,29 +1,32 @@
-/* global angular Firebase*/
-(function(){
+/* global angular firebase*/
+(function() {
   'use strict';
 
   var Firebase_Url = 'https://fiery-inferno-4540.firebaseio.com';
-  var ref = new Firebase(Firebase_Url);
+
 
   angular.module('nightmare')
-   .controller('SubmitController', ['$scope', '$firebaseArray',
-    function($scope, $firebaseArray) {
-     $scope.list = [];
-     $scope.text = 'hello';
-     $scope.submit = function() {
-       if ($scope.text) {
-         $scope.list.push(this.text);
-         $scope.text = '';
-       }console.log($scope.list);
-     };
-   }]);
+    .controller('SubmitController', AddStop);
 
-   angular
+  function AddStop($scope, $firebaseArray) {
+    var ref = new Firebase('https://fiery-inferno-4540.firebaseio.com');
+    $scope.list = $firebaseArray(ref);
+    // $scope.text = 'hello';
+    $scope.submit = function() {
+      $scope.list.$add({
+        stop: $scope.newStop,
+        street: $scope.street_address
+      });
+      $scope.newStop ='';
+    };console.log($scope.list);
+  };
+
+  angular
     .module('nightmare')
     .controller('CommentController', function() {
       this.submit = {};
 
-      this.addSubmit = function(stop){
+      this.addSubmit = function(stop) {
         stop.submits.push(this.submit);
         console.log('hi');
         console.log(this.submit);

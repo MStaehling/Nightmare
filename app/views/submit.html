@@ -101,10 +101,10 @@ function geolocate() {
 // [END region_geolocation]
 
     </script> -->
-<form name="new_stop" ng-submit="submit(new_stop)">
+<form  ng-submit="submit()">
   <div class="address">
     <label for="stop">Stop</label>
-    <input ng-model="stop" name="stop" type="text" id="stop" placeholder="Enter name of stop">
+    <input ng-model="newStop" name="stop" type="text" id="stop" placeholder="Enter name of stop">
     <label for="street_address">Street Address</label>
     <input ng-model="street_address" name="street_address" type="text" id="street_address">
     <label for="city">City</label>

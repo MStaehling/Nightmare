@@ -104,15 +104,15 @@ function geolocate() {
 <form  ng-submit="submit()">
   <div class="address">
     <label for="stop">Stop</label>
-    <input ng-model="newStop" name="stop" type="text" id="stop" placeholder="Enter name of stop">
+    <input ng-model="newStop" name="stop" type="text" id="stop" placeholder="Enter name of stop" required>
     <label for="street_address">Street Address</label>
-    <input ng-model="street_address" name="street_address" type="text" id="street_address">
+    <input ng-model="street_address" name="street_address" type="text" id="street_address" required>
     <label for="city">City</label>
-    <input ng-model="city" name="city" type="text" id="city">
+    <input ng-model="city" name="city" type="text" id="city" required>
     <label for="state">State</label>
-    <input ng-model="state" name="state" type="text" id="state">
+    <input ng-model="state" name="state" type="text" id="state" required>
     <label for="zip_code">Zip Code</label>
-    <input ng-model="zip_code" name="zip_code" type="text" id="zip_code">
+    <input ng-model="zip_code" name="zip_code" type="text" id="zip_code" required>
   </div><!-- .address -->
   <div class="select-questions">
     <label for="camera">Are there any security camera's on site?</label>

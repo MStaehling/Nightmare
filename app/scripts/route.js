@@ -3,7 +3,7 @@
   'use strict';
 
    angular
-    .module('nightmare', ['ngRoute', 'restangular'])
+    .module('nightmare', ['ngRoute', 'restangular', 'firebase'])
     .config(function($routeProvider) {
     $routeProvider
       .when('/home', {

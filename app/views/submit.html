@@ -101,55 +101,55 @@ function geolocate() {
 // [END region_geolocation]
 
     </script> -->
-<form ng-submit="submit()">
+<form  ng-submit="submit()">
   <div class="address">
     <label for="stop">Stop</label>
-    <input type="text" id="stop" placeholder="Enter name of stop">
+    <input ng-model="newStop" name="stop" type="text" id="stop" placeholder="Enter name of stop" required>
     <label for="street_address">Street Address</label>
-    <input type="text" id="street_address">
+    <input ng-model="street_address" name="street_address" type="text" id="street_address" required>
     <label for="city">City</label>
-    <input type="text" id="city">
+    <input ng-model="city" name="city" type="text" id="city" required>
     <label for="state">State</label>
-    <input type="text" id="state">
+    <input ng-model="state" name="state" type="text" id="state" required>
     <label for="zip_code">Zip Code</label>
-    <input type="text" id="zip_code">
+    <input ng-model="zip_code" name="zip_code" type="text" id="zip_code" required>
   </div><!-- .address -->
   <div class="select-questions">
     <label for="camera">Are there any security camera's on site?</label>
-    <select id="camera" name="camera">
+    <select ng-model="camera" id="camera" name="camera">
       <option>yes</option>
       <option>no</option>
     </select>
     <label for="guard">Do you have to go through a guard shack or security gate?</label>
-    <select id="guard" name="guard">
+    <select ng-model="guard" id="guard" name="guard">
       <option>yes</option>
       <option>no</option>
     </select>
     <label for="security">Is there a security guard or police officer on site?</label>
-    <select id="security" name="security">
+    <select ng-model="security" id="security" name="security">
       <option>yes</option>
       <option>no</option>
     </select><br>
     <label for="light">Is the stop well lit?</label>
-    <select id="light" name="light">
+    <select ng-model="light" id="light" name="light">
       <option>yes</option>
       <option>no</option>
     </select><br>
     <label for="parking">Is there overnight parking available?</label>
-    <select id="parking" name="parking">
+    <select ng-model="parking" id="parking" name="parking">
       <option>yes</option>
       <option>no</option>
     </select><br>
     <label for="hazards">Are there any hazards to be aware of whether they are driving related, like low hanging branches, or actual delivery, a stop might have extremely slippery floors? Please explain.</label>
-    <textarea style="width:100%" id="hazards" name="hazards"></textarea>
+    <textarea ng-model="hazards" style="width:100%" id="hazards" name="hazards"></textarea>
   </div><!-- .select-questions -->
   <div class="delivery">
     <label for="delivery_instructions">Is there unique delivery instructions for this stop whether it is a delivery time window or a not so obvious way to make the delivery like a service entrance is on a different block then the normal entrance.</label>
-    <textarea style="width:100%" id="delivery_instructions" name="delivery_instructions"></textarea>
+    <textarea ng-model="delivery_instructions" style="width:100%" id="delivery_instructions" name="delivery_instructions"></textarea>
   </div><!-- .delivery -->
   <div class="info">
     <label for="info">If there's any additional information that hasn't been mentioned please put it here.</label>
-    <textarea style="width:100%" id="info" name="info"></textarea>
+    <textarea ng-model="info" style="width:100%" id="info" name="info"></textarea>
   </div><!-- .info -->
   <input type="submit" id="submit" value="Submit" class="pull-right"/>
 </form>

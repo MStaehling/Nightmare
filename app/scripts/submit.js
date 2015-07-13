@@ -1,9 +1,13 @@
-/* global angular */
+/* global angular Firebase*/
 (function(){
   'use strict';
 
+  var Firebase_Url = 'https://fiery-inferno-4540.firebaseio.com';
+  var ref = new Firebase(Firebase_Url);
+
   angular.module('nightmare')
-   .controller('SubmitController', ['$scope', function($scope) {
+   .controller('SubmitController', ['$scope', '$firebaseArray',
+    function($scope, $firebaseArray) {
      $scope.list = [];
      $scope.text = 'hello';
      $scope.submit = function() {

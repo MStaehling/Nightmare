@@ -28,7 +28,19 @@
         delivery_instructions: $scope.delivery_instructions,
         info: $scope.info
       });
-      $scope.newStop ='';
+      $scope.newStop = '';
+      $scope.street_address = '';
+      $scope.city = '';
+      $scope.state = '';
+      $scope.zip_code = '';
+      $scope.camera = '';
+      $scope.guard = '';
+      $scope.security = '';
+      $scope.light = '';
+      $scope.parking = '';
+      $scope.hazards = '';
+      $scope.delivery_instructions = '';
+      $scope.info = '';
     };console.log($scope.list);
   };
 

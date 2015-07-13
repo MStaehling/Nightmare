@@ -1,60 +1,59 @@
-/* global angular firebase*/
+/* global angular Firebase*/
 (function() {
   'use strict';
 
-  var Firebase_Url = 'https://fiery-inferno-4540.firebaseio.com';
+  // var Firebase_Url = 'https://fiery-inferno-4540.firebaseio.com';
 
 
   angular.module('nightmare')
-    .controller('SubmitController', AddStop);
-
-  function AddStop($scope, $firebaseArray) {
+    .controller('SubmitController', function ($scope, $firebaseArray) {
+    function empty(answer) {
+      if (answer) {
+        return answer;
+      } else {
+        return null;
+      }
+    }
     var ref = new Firebase('https://fiery-inferno-4540.firebaseio.com');
     $scope.list = $firebaseArray(ref);
     // $scope.text = 'hello';
     $scope.submit = function() {
       $scope.list.$add({
         stop: $scope.newStop,
-        street: $scope.street_address,
+        street: $scope.streetAddress,
         city: $scope.city,
         state: $scope.state,
-        zip_code: $scope.zip_code,
-        camera: undefined($scope.camera),
-        guard: undefined($scope.guard),
-        security: undefined($scope.security),
-        light: undefined($scope.light),
-        parking: undefined($scope.parking),
-        hazards: undefined($scope.hazards),
-        delivery_instructions: undefined($scope.delivery_instructions),
-        info: undefined($scope.info)
+        zipCode: $scope.zipCode,
+        camera: empty($scope.camera),
+        guard: empty($scope.guard),
+        security: empty($scope.security),
+        light: empty($scope.light),
+        parking: empty($scope.parking),
+        hazards: empty($scope.hazards),
+        deliveryInstructions: empty($scope.deliveryInstructions),
+        info: empty($scope.info)
       });
       $scope.newStop = '';
-      $scope.street_address = '';
+      $scope.streetAddress = '';
       $scope.city = '';
       $scope.state = '';
-      $scope.zip_code = '';
+      $scope.zipCode = '';
       $scope.camera = '';
       $scope.guard = '';
       $scope.security = '';
       $scope.light = '';
       $scope.parking = '';
       $scope.hazards = '';
-      $scope.delivery_instructions = '';
+      $scope.deliveryInstructions = '';
       $scope.info = '';
 
-      function undefined(answer) {
-        if (answer) {
-          return answer;
-        } else {
-          return null;
-        }
-      };
+
     };
     console.log($scope.list);
-  };
+  })
 
-  angular
-    .module('nightmare')
+  // angular
+  //   .module('nightmare')
     .controller('CommentController', function() {
       this.submit = {};
 

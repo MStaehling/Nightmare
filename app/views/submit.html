@@ -106,13 +106,13 @@ function geolocate() {
     <label for="stop">Stop</label>
     <input ng-model="newStop" name="stop" type="text" id="stop" placeholder="Enter name of stop" required>
     <label for="street_address">Street Address</label>
-    <input ng-model="street_address" name="street_address" type="text" id="street_address" required>
+    <input ng-model="streetAddress" name="street_address" type="text" id="street_address" required>
     <label for="city">City</label>
     <input ng-model="city" name="city" type="text" id="city" required>
     <label for="state">State</label>
     <input ng-model="state" name="state" type="text" id="state" required>
     <label for="zip_code">Zip Code</label>
-    <input ng-model="zip_code" name="zip_code" type="text" id="zip_code" required>
+    <input ng-model="zipCode" name="zip_code" type="text" id="zip_code" required>
   </div><!-- .address -->
   <div class="select-questions">
     <label for="camera">Are there any security camera's on site?</label>
@@ -145,7 +145,7 @@ function geolocate() {
   </div><!-- .select-questions -->
   <div class="delivery">
     <label for="delivery_instructions">Is there unique delivery instructions for this stop whether it is a delivery time window or a not so obvious way to make the delivery like a service entrance is on a different block then the normal entrance.</label>
-    <textarea ng-model="delivery_instructions" style="width:100%" id="delivery_instructions" name="delivery_instructions"></textarea>
+    <textarea ng-model="deliveryInstructions" style="width:100%" id="delivery_instructions" name="delivery_instructions"></textarea>
   </div><!-- .delivery -->
   <div class="info">
     <label for="info">If there's any additional information that hasn't been mentioned please put it here.</label>

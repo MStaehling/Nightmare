@@ -19,14 +19,14 @@
         city: $scope.city,
         state: $scope.state,
         zip_code: $scope.zip_code,
-        camera: $scope.camera,
-        guard: $scope.guard,
-        security: $scope.security,
-        light: $scope.light,
-        parking: $scope.parking,
-        hazards: $scope.hazards,
-        delivery_instructions: $scope.delivery_instructions,
-        info: $scope.info
+        camera: undefined($scope.camera),
+        guard: undefined($scope.guard),
+        security: undefined($scope.security),
+        light: undefined($scope.light),
+        parking: undefined($scope.parking),
+        hazards: undefined($scope.hazards),
+        delivery_instructions: undefined($scope.delivery_instructions),
+        info: undefined($scope.info)
       });
       $scope.newStop = '';
       $scope.street_address = '';
@@ -41,7 +41,16 @@
       $scope.hazards = '';
       $scope.delivery_instructions = '';
       $scope.info = '';
-    };console.log($scope.list);
+
+      function undefined(answer) {
+        if (answer) {
+          return answer;
+        } else {
+          return null;
+        }
+      };
+    };
+    console.log($scope.list);
   };
 
   angular

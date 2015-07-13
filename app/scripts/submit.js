@@ -15,7 +15,18 @@
     $scope.submit = function() {
       $scope.list.$add({
         stop: $scope.newStop,
-        street: $scope.street_address
+        street: $scope.street_address,
+        city: $scope.city,
+        state: $scope.state,
+        zip_code: $scope.zip_code,
+        camera: $scope.camera,
+        guard: $scope.guard,
+        security: $scope.security,
+        light: $scope.light,
+        parking: $scope.parking,
+        hazards: $scope.hazards,
+        delivery_instructions: $scope.delivery_instructions,
+        info: $scope.info
       });
       $scope.newStop ='';
     };console.log($scope.list);

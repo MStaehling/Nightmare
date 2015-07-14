@@ -20,7 +20,9 @@
         controller: 'SingleController'
       })
       .when('/search', {
-        templateUrl: '/views/search.html'
+        templateUrl: '/views/search.html',
+        controller: 'SingleController',
+        controllerAs: 'stop'
       })
       .when('/sign_up', {
         templateUrl: '/views/sign_up.html'

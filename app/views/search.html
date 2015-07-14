@@ -1,5 +1,7 @@
 <!-- will need to add a ng-repeat possibly
 Will need to set up link to stops page for the stop that's being picked -->
 <main>
-  <span><a href="#/stops">Stop and address</a></span>
+  <ul ng-repeat="stops in stop">
+    <li><a href="#/stops">{{stops.stop}}</a></li>
+  </ul>
 </main>

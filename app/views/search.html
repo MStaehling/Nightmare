@@ -2,6 +2,6 @@
 Will need to set up link to stops page for the stop that's being picked -->
 <main>
   <ul ng-repeat="stops in stop">
-    <li><a href="#/stops">{{stops.stop}}</a></li>
+    <li><a href="#/stops">{{stops.stop}} {{stops.street}} {{stops.city}}, {{stops.state}} {{stops.zipCode}}</a></li>
   </ul>
 </main>

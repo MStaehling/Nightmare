@@ -7,7 +7,7 @@
       $http.get('https://fiery-inferno-4540.firebaseio.com/.json')
         .then(function(response) {
           $scope.stop = response.data;
-        })
-    })
+        });
+    });
 
 })();

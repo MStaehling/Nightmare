@@ -17,7 +17,7 @@
       })
       .when('/stops', {
         templateUrl: '/views/stops.html',
-        controller: 'CommentController'
+        controller: 'SingleController'
       })
       .when('/search', {
         templateUrl: '/views/search.html'

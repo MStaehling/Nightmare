@@ -15,9 +15,10 @@
         templateUrl: '/views/submit.html',
         controller: 'SubmitController'
       })
-      .when('/stops', {
+      .when('/stops/:stop', {
         templateUrl: '/views/stops.html',
-        controller: 'StopController'
+        controller: 'StopController',
+        controllerAs: 'stop'
       })
       .when('/search', {
         templateUrl: '/views/search.html',
@@ -27,7 +28,7 @@
       .when('/sign_up', {
         templateUrl: '/views/sign_up.html'
       })
-      .otherwise({
+      .when('/', {
         redirectTo: '/home'
       });
   });

@@ -11,8 +11,9 @@
         });
     })
     .controller('StopController', function($scope, $http, $routeParams){
-      $http.get('https://fiery-inferno-4540.firebaseio.com/.json' + $routeParams + '.json')
+      $http.get('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '.json')
       .then(function(response) {
+        $scope.stop = response.data;
         console.log('hi', response);
       })
     })

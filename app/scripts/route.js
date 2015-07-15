@@ -3,7 +3,7 @@
   'use strict';
 
    angular
-    .module('nightmare', ['ngRoute', 'restangular', 'firebase'])
+    .module('nightmare', ['ngRoute', 'restangular', 'firebase', 'angular-toArrayFilter'])
     .config(function($routeProvider) {
     $routeProvider
       .when('/home', {

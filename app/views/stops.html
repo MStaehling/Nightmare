@@ -44,10 +44,10 @@
   <h5>Is there unique delivery instructions for this stop whether it is a delivery time window or a not so obvious way to make the delivery like a service entrance is on a different block then the normal entrance.</h5>
   <p>{{stop.deliveryInstructions}}</p>
 </div><!-- .delivery -->
-<div class="comments">
-  <p>{{submit.addSubmit(stop)}}</p>
+<div class="comments" ng-repeat="(id, stops) in stop">
+  <p>{{stops.comment}}</p>
 </div><!-- .comments -->
-<form ng-submit="submit.addSubmit(stop)">
+<form ng-submit="submit()">
   <div class="info">
     <h5 for="info">If there's any additional information that hasn't been mentioned please put it here.</h5>
     <textarea ng-model="comment" style="width:100%" id="info" name="info"></textarea>

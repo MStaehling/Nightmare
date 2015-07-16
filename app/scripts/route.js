@@ -15,19 +15,20 @@
         templateUrl: '/views/submit.html',
         controller: 'SubmitController'
       })
-      .when('/stops', {
+      .when('/stops/:stop', {
         templateUrl: '/views/stops.html',
-        controller: 'SingleController'
+        controller: 'StopController',
+        controllerAs: 'show'
       })
       .when('/search', {
         templateUrl: '/views/search.html',
         controller: 'SingleController',
-        controllerAs: 'stop'
+        controllerAs: 'search'
       })
       .when('/sign_up', {
         templateUrl: '/views/sign_up.html'
       })
-      .otherwise({
+      .when('/', {
         redirectTo: '/home'
       });
   });

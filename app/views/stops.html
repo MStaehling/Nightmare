@@ -1,46 +1,48 @@
 <!-- think this is the start of adding comments to an existing stop -->
 <div class="address">
   <h5>Stop</h5>
-  <h6>Jimmy Hula’s</h6>
+  <h6>{{stop.stop}}</h6>
   <h5>Street Address<h5>
-    <h6>2522 Aloma Avenue</h6>
+    <h6>{{stop.street}}</h6>
   <h5>City</h5>
-  <h6>Winter Park</h6>
+  <h6>{{stop.city}}</h6>
   <h5>State</h5>
-  <h6>Florida</h6>
+  <h6>{{stop.state}}</h6>
   <h5>Zip Code</h5>
-  <h6>32792</h6>
+  <h6>{{stop.zipCode}}</h6>
 </div><!-- .address -->
 <div class="select-questions">
   <h5>Are there any security camera's on site?</h5>
-  <select id="camera" name="camera">
+  <select id="camera" name="camera" ng-model="stop.camera">
     <option>yes</option>
     <option>no</option>
   </select>
   <h5>Do you have to go through a guard shack or security gate?</h5>
-  <select id="guard" name="guard">
+  <select id="guard" name="guard" ng-model="stop.guard">
     <option>yes</option>
     <option>no</option>
   </select>
   <h5>Is there a security guard or police officer on site?</h5>
-  <select id="security" name="security">
+  <select id="security" name="security" ng-model="stop.security">
     <option>yes</option>
     <option>no</option>
   </select><br>
   <h5>Is the stop well lit?</h5>
-  <select id="light" name="light">
+  <select id="light" name="light" ng-model="stop.light">
     <option>yes</option>
     <option>no</option>
   </select><br>
   <h5>Is there overnight parking available?</h5>
-  <select id="parking" name="parking">
+  <select id="parking" name="parking" ng-model="stop.parking">
     <option>yes</option>
     <option>no</option>
   </select><br>
   <h5>Are there any hazards to be aware of whether they are driving related, like low hanging branches, or actual delivery, a stop might have extremely slippery floors? Please explain.</h5>
+  <p>{{stop.hazards}}</p>
 </div><!-- .select-questions -->
 <div class="delivery">
   <h5>Is there unique delivery instructions for this stop whether it is a delivery time window or a not so obvious way to make the delivery like a service entrance is on a different block then the normal entrance.</h5>
+  <p>{{stop.deliveryInstructions}}</p>
 </div><!-- .delivery -->
 <div class="comments">
   <p>{{submit.addSubmit(stop)}}</p>

@@ -6,7 +6,7 @@
 
 
   angular.module('nightmare')
-    .controller('SubmitController', function ($scope, $firebaseArray) {
+    .controller('SubmitController', function ($scope, $firebaseArray, $location) {
     function empty(answer) {
       if (answer) {
         return answer;
@@ -47,8 +47,9 @@
       $scope.deliveryInstructions = '';
       $scope.info = '';
 
-
     };
+
+    
     console.log($scope.list);
   });
 

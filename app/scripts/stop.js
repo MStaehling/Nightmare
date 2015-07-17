@@ -1,4 +1,4 @@
-/* global angular */
+/* global angular Firebase*/
 (function() {
   'use strict';
 
@@ -27,20 +27,6 @@
       };
 
     });
-    // .controller('CommentController', function($scope, $http, $routeParams, $firebaseArray){
-    //   $scope.comment = {
-    //     comment: ''
-    //   };
-    //
-    //   var ref = new Firebase('https://fiery-inferno-4540.firebaseio.com' + $routeParams.stop + '/content');
-    //   $scope.stop = $firebaseArray(ref);
-    //
-    //   $scope.submit = function() {
-    //     console.log($scope.stop);
-    //         $scope.stop.$add($scope.comment);
-    //         $scope.comment = "";
-    //       };
-
-    //})
+  
 
 })();

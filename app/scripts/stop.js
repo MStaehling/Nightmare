@@ -23,10 +23,7 @@
         $scope.stopComment.$add({
           comment: $scope.comment
         });
-        $scope.comment = "";
+        $scope.comment = '';
       };
-
     });
-  
-
 })();

@@ -7,7 +7,7 @@
 
   .directive('ngEnter', function($location) {
     return function(scope, element, attrs) {
-      element.bind("keydown keypress", function(event) {
+      element.bind('keydown keypress', function(event) {
         if (event.which === 13) {
           scope.$apply(function() {
             scope.$eval(attrs.ngEnter);
@@ -19,7 +19,7 @@
         }
       });
     };
-  })
+  });
 
   // got most of this from http://eric.sau.pe/angularjs-detect-enter-key-ngenter/
 })();

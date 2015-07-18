@@ -6,7 +6,7 @@
 
 
   angular.module('nightmare')
-    .controller('SubmitController', function ($scope, $firebaseArray) {
+    .controller('SubmitController', function ($firebaseArray) {
     function empty(answer) {
       if (answer) {
         return answer;
@@ -14,43 +14,47 @@
         return null;
       }
     }
+
+    var self = this;
+
     var ref = new Firebase('https://fiery-inferno-4540.firebaseio.com');
-    $scope.list = $firebaseArray(ref);
-    // $scope.text = 'hello';
-    $scope.submit = function() {
-      $scope.list.$add({
-        stop: $scope.newStop,
-        street: $scope.streetAddress,
-        city: $scope.city,
-        state: $scope.state,
-        zipCode: $scope.zipCode,
-        camera: empty($scope.camera),
-        guard: empty($scope.guard),
-        security: empty($scope.security),
-        light: empty($scope.light),
-        parking: empty($scope.parking),
-        hazards: empty($scope.hazards),
-        deliveryInstructions: empty($scope.deliveryInstructions),
-        info: empty($scope.info)
+    this.list = $firebaseArray(ref);
+    // self.text = 'hello';
+    this.submit = function() {
+      console.log('hi');
+      self.list.$add({
+        stop: self.newStop,
+        street: self.streetAddress,
+        city: self.city,
+        state: self.state,
+        zipCode: self.zipCode,
+        camera: empty(self.camera),
+        guard: empty(self.guard),
+        security: empty(self.security),
+        light: empty(self.light),
+        parking: empty(self.parking),
+        hazards: empty(self.hazards),
+        deliveryInstructions: empty(self.deliveryInstructions),
+        info: empty(self.info)
       });
-      $scope.newStop = '';
-      $scope.streetAddress = '';
-      $scope.city = '';
-      $scope.state = '';
-      $scope.zipCode = '';
-      $scope.camera = '';
-      $scope.guard = '';
-      $scope.security = '';
-      $scope.light = '';
-      $scope.parking = '';
-      $scope.hazards = '';
-      $scope.deliveryInstructions = '';
-      $scope.info = '';
+      self.newStop = '';
+      self.streetAddress = '';
+      self.city = '';
+      self.state = '';
+      self.zipCode = '';
+      self.camera = '';
+      self.guard = '';
+      self.security = '';
+      self.light = '';
+      self.parking = '';
+      self.hazards = '';
+      self.deliveryInstructions = '';
+      self.info = '';
 
     };
 
 
-    console.log($scope.list);
+    console.log(self.list);
   });
 
 })();

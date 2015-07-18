@@ -13,7 +13,8 @@
       })
       .when('/submit', {
         templateUrl: '/views/submit.html',
-        controller: 'SubmitController'
+        controller: 'SubmitController',
+        controllerAs: 'list'
       })
       .when('/stops/:stop', {
         templateUrl: '/views/stops.html',

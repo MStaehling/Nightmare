@@ -3,7 +3,7 @@
   'use strict';
 
    angular
-    .module('nightmare', ['ngRoute', 'restangular', 'firebase'])
+    .module('nightmare', ['ngRoute', 'restangular', 'firebase', 'angular-toArrayFilter'])
     .config(function($routeProvider) {
     $routeProvider
       .when('/home', {
@@ -15,17 +15,20 @@
         templateUrl: '/views/submit.html',
         controller: 'SubmitController'
       })
-      .when('/stops', {
+      .when('/stops/:stop', {
         templateUrl: '/views/stops.html',
-        controller: 'CommentController'
+        controller: 'StopController',
+        controllerAs: 'show'
       })
       .when('/search', {
-        templateUrl: '/views/search.html'
+        templateUrl: '/views/search.html',
+        controller: 'SingleController',
+        controllerAs: 'search'
       })
       .when('/sign_up', {
         templateUrl: '/views/sign_up.html'
       })
-      .otherwise({
+      .when('/', {
         redirectTo: '/home'
       });
   });

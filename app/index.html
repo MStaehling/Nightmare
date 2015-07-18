@@ -39,9 +39,10 @@
         <li><a href="#/stops">Stops</a></li>
         <li><a href="#/sign_up">Sign Up</a></li>
         <li><a href="#">Login</a></li>
+        <li><a href="#/search">Search</a></li>
       </ul>
       <label class="pull-right">Search:
-        <input ng-model="searchText">
+        <input ng-enter="myFunction()" href="#/search"  ng-model="searchText">
       </label>
     </div>
     <!-- header -->
@@ -68,6 +69,7 @@
   <script src="/bower_components/firebase/firebase.js"></script>
   <script src="/bower_components/angular-route/angular-route.js"></script>
   <script src="/bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="/bower_components/angular-toArrayFilter/toArrayFilter.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -88,9 +90,11 @@
 
   <!-- build:js scripts/main.js -->
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
-  <script src="scripts/firebase.js"></script>
   <script src="scripts/route.js"></script>
+  <script src="scripts/firebase.js"></script>
   <script src="scripts/submit.js"></script>
+  <script src="scripts/stop.js"></script>
+  <script src="scripts/search.js"></script>
   <!-- endbuild -->
 </body>
 

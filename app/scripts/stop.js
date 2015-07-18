@@ -3,27 +3,28 @@
   'use strict';
 
   angular.module('nightmare')
-    .controller('StopController', function($scope, $http, $routeParams, $firebaseArray){
+    .controller('StopController', function($http, $routeParams, $firebaseArray){
 
+      this.stop = {};
       var self = this;
-      
+
       function pullData(){
         $http.get('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '.json')
         .then(function(response) {
-          $scope.stop = response.data;
+          self.stop = response.data;
           console.log('hi', response);
         });
       }
 
       var ref = new Firebase('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '/comments');
-      $scope.stopComment = $firebaseArray(ref);
+      self.stopComment = $firebaseArray(ref);
 
-  $scope.submit = function() {
-    console.log($scope.stop);
-        $scope.stopComment.$add({
-          comment: $scope.comment
+  self.submit = function() {
+    console.log(self.stop);
+        self.stopComment.$add({
+          comment: self.comment
         });
-        $scope.comment = '';
+        self.comment = '';
         pullData();
       };
       pullData();

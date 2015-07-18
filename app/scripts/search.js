@@ -9,6 +9,6 @@
           $scope.stop = response.data;
           console.log(response.data);
         });
-    })
+    });
 
 })();

@@ -45,7 +45,7 @@
   <p>{{stop.deliveryInstructions}}</p>
 </div><!-- .delivery -->
 <div class="comments row cmt" ng-repeat="(id, stops) in stop.comments">
-  <p>{{stops.comment}}</p>
+  <p ng-model="stops.comment">{{stops.comment}}</p>
 </div><!-- .comments -->
 <form ng-submit="submit()">
   <div class="info">

@@ -4,10 +4,9 @@
 
   angular.module('nightmare')
     .controller('StopController', function($scope, $http, $routeParams, $firebaseArray){
-      // $scope.comment = {
-      //   comment: ''
-      // }
 
+      var self = this;
+      
       function pullData(){
         $http.get('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '.json')
         .then(function(response) {

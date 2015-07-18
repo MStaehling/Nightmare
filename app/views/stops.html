@@ -47,10 +47,10 @@
 <div class="comments row cmt" ng-repeat="(id, stops) in show.stop.comments">
   <p ng-model="show.stops.comment">{{stops.comment}}</p>
 </div><!-- .comments -->
-<form ng-submit="submit()">
+<form ng-submit="show.submit()">
   <div class="info">
     <h5 for="info">If there's any additional information that hasn't been mentioned please put it here.</h5>
-    <textarea ng-model="comment" style="width:100%" id="info" name="info"></textarea>
+    <textarea ng-model="show.comment" style="width:100%" id="info" name="info"></textarea>
   </div><!-- .info -->
   <input type="submit" id="submit" value="Submit" class="pull-right"/>
 </form>

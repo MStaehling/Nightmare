@@ -14,7 +14,7 @@
           $scope.stop = response.data;
           console.log('hi', response);
         });
-      };
+      }
 
       var ref = new Firebase('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '/comments');
       $scope.stopComment = $firebaseArray(ref);

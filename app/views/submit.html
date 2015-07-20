@@ -101,19 +101,30 @@ function geolocate() {
 // [END region_geolocation]
 
     </script> -->
-<form  ng-submit="list.submit()">
+<form class="form-horizontal" ng-submit="list.submit()">
   <div class="address">
-    <label for="stop">Stop</label>
-    <input ng-model="list.newStop" name="stop" type="text" id="stop" placeholder="Enter name of stop" required>
-    <label for="street_address">Street Address</label>
-    <input ng-model="list.streetAddress" name="street_address" type="text" id="street_address" required>
-    <label for="city">City</label>
-    <input ng-model="list.city" name="city" type="text" id="city" required>
-    <label for="state">State</label>
-    <input ng-model="list.state" name="state" type="text" id="state" required>
-    <label for="zip_code">Zip Code</label>
-    <input ng-model="list.zipCode" name="zip_code" type="text" id="zip_code" required>
-  </div><!-- .address -->
+    <div class="form-group">
+      <label for="stop">Stop</label>
+      <input ng-model="list.newStop" name="stop" type="text" id="stop" placeholder="Enter name of stop" required>
+    </div>
+    <div class="form-group">
+      <label for="street_address">Street Address</label>
+      <input ng-model="list.streetAddress" name="street_address" type="text" id="street_address" required>
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input ng-model="list.city" name="city" type="text" id="city" required>
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <input ng-model="list.state" name="state" type="text" id="state" required>
+    </div>
+    <div class="form-group">
+      <label for="zip_code">Zip Code</label>
+      <input ng-model="list.zipCode" name="zip_code" type="text" id="zip_code" required>
+    </div>
+  </div>
+  <!-- .address -->
   <div class="select-questions">
     <label for="camera">Are there any security camera's on site?</label>
     <select ng-model="list.camera" id="camera" name="camera">
@@ -129,27 +140,33 @@ function geolocate() {
     <select ng-model="list.security" id="security" name="security">
       <option>yes</option>
       <option>no</option>
-    </select><br>
+    </select>
+    <br>
     <label for="light">Is the stop well lit?</label>
     <select ng-model="list.light" id="light" name="light">
       <option>yes</option>
       <option>no</option>
-    </select><br>
+    </select>
+    <br>
     <label for="parking">Is there overnight parking available?</label>
     <select ng-model="list.parking" id="parking" name="parking">
       <option>yes</option>
       <option>no</option>
-    </select><br>
+    </select>
+    <br>
     <label for="hazards">Are there any hazards to be aware of whether they are driving related, like low hanging branches, or actual delivery, a stop might have extremely slippery floors? Please explain.</label>
     <textarea ng-model="list.hazards" style="width:100%" id="hazards" name="hazards"></textarea>
-  </div><!-- .select-questions -->
+  </div>
+  <!-- .select-questions -->
   <div class="delivery">
     <label for="delivery_instructions">Is there unique delivery instructions for this stop whether it is a delivery time window or a not so obvious way to make the delivery like a service entrance is on a different block then the normal entrance.</label>
     <textarea ng-model="list.deliveryInstructions" style="width:100%" id="delivery_instructions" name="delivery_instructions"></textarea>
-  </div><!-- .delivery -->
+  </div>
+  <!-- .delivery -->
   <div class="info">
     <label for="info">If there's any additional information that hasn't been mentioned please put it here.</label>
     <textarea ng-model="list.info" style="width:100%" id="info" name="info"></textarea>
-  </div><!-- .info -->
-  <input type="submit" id="submit" value="Submit" class="pull-right"/>
+  </div>
+  <!-- .info -->
+  <input type="submit" id="submit" value="Submit" class="pull-right" />
 </form>

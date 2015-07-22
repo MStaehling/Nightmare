@@ -58,7 +58,7 @@
     <label ng-dblclick="show.editComment(stops.$id, stops)" class="ng-binding" ng-hide="show.edit==stops">{{stops.comment}}</label>
 
     <label ng-show="show.edit==stops">
-      <input type="text" ng-model="stops.comment" ng-change="show.stopComment.$save(stops)" ng-blur="doneEditing(stops)" ng-keyup="show.editComments($index, comment, $event)" />
+      <input type="text" ng-model="stops.comment" ng-change="show.stopComment.$save(stops)" class="col-sm-10" ng-blur="doneEditing(stops)" ng-keyup="show.editComments($index, comment, $event)" />
     </label>
 
   </div>

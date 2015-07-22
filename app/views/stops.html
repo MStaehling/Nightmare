@@ -55,9 +55,16 @@
 
   <div class="view">
 
-    <label ng-dblclick="show.editComment(stops)" class="ng-binding">{{stops.comment}}</label>
+    <label ng-dblclick="show.editComment(stops)" class="ng-binding" ng-hide="show.edit">{{stops.comment}}</label>
+
+    <label ng-show="show.edit">
+      <input type="text" ng-model="stops.comment" ng-blur="doneEditing(stops)" ng-keyup="editComments($index, comment, $event)" />
+    </label>
 
   </div>
+  <!-- <form ng-show="show.editing" ng-submit="show.editComment(stops.$id)" class="ng-valid ng-dirty ng-submitted">
+    <input class="edit ng-valid ng-touched ng-dirty" ng-model="show.editedComment.comment" todo-escape="show.revertEditing(stops)" todo-blur="show.doneEditing(stops)" todo-focus="stops == show.editedComment">
+  </form> -->
 
   <!-- <p ng-dblclick="show.inputField(stops)" class="ng-binding" ng-model="show.stops.comment">{{stops.comment}}</p>
   <span ng-hide="customer.editing" ng-dblclick="editItem(stops)">{{stops.comment}}</span>
@@ -66,9 +73,7 @@
     <input type="text" ng-model="customer.name" ng-blur="doneEditing(customer)" ng-keyup="editCustomer($index, customer, $event)" />
   </label>
   <input ng-show="show.editing = comment"> -->
-  <!-- <form ng-show="show.editing" ng-submit="show.editComment(stops.$id)" class="ng-valid ng-dirty ng-submitted">
-    <input class="edit ng-valid ng-touched ng-dirty" ng-model="show.editedComment.comment" todo-escape="revertEditing(edit)" todo-blur="doneEditing(edit)" todo-focus="edit == editedComment">
-  </form> -->
+
 </div>
 <!-- .comments -->
 <form ng-submit="show.submit()">

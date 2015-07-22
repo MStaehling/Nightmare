@@ -51,10 +51,14 @@
       //   return self.editing = true;
       // };
 
-      self.editComment = function(edit) {
+      this.edit = false;
+
+      self.editComment = function(stop) {
         console.log('what');
-        self.editedComment = edit;
-        self.originalComment = angular.extend({}, self.editedComment);
+        self.edit = true;
+        //stop.tempName = stops.comment;
+        // self.editedComment = edit;
+        // self.originalComment = angular.extend({}, self.editedComment);
       };
 
       self.doneEditing = function(edit) {

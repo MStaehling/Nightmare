@@ -51,15 +51,21 @@
   <p>{{show.stop.deliveryInstructions}}</p>
 </div>
 <!-- .delivery -->
-<div class="comments row cmt view" ng-repeat="stops in show.stopComment">
+<div class="comments row cmt view" ng-repeat="stops in show.stopComment" ng-class="{completed: stops.completed, editing: stops == show.editedComment}" class="ng-scope">
 
-  <p ng-dblclick="show.inputField(stops)" class="ng-binding" ng-model="show.stops.comment">{{stops.comment}}</p>
-<span ng-hide="customer.editing" ng-dblclick="editItem(stops)">{{stops.comment}}</span>
+  <div class="view">
 
-                <label ng-show="customer.editing">
-                    <input type="text" ng-model="customer.name" ng-blur="doneEditing(customer)" ng-keyup="editCustomer($index, customer, $event)" />
-                </label>
-  <input ng-show="show.editing = comment">
+    <label ng-dblclick="show.editComment(stops)" class="ng-binding">{{stops.comment}}</label>
+
+  </div>
+
+  <!-- <p ng-dblclick="show.inputField(stops)" class="ng-binding" ng-model="show.stops.comment">{{stops.comment}}</p>
+  <span ng-hide="customer.editing" ng-dblclick="editItem(stops)">{{stops.comment}}</span>
+
+  <label ng-show="customer.editing">
+    <input type="text" ng-model="customer.name" ng-blur="doneEditing(customer)" ng-keyup="editCustomer($index, customer, $event)" />
+  </label>
+  <input ng-show="show.editing = comment"> -->
   <!-- <form ng-show="show.editing" ng-submit="show.editComment(stops.$id)" class="ng-valid ng-dirty ng-submitted">
     <input class="edit ng-valid ng-touched ng-dirty" ng-model="show.editedComment.comment" todo-escape="revertEditing(edit)" todo-blur="doneEditing(edit)" todo-focus="edit == editedComment">
   </form> -->

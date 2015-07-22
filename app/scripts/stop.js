@@ -28,43 +28,53 @@
         pullData();
       };
 
-      self.editComment = function(endpoint) {
-        var commentEndpoint = new Firebase('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '/comments/' + endpoint);
-        self.indComment = $firebaseObject(commentEndpoint);
-        console.log('endpoint', endpoint);
-        console.log('hi', self.indComment);
-        self.indComment.comment = '';
-        console.log('hi', self.indComment);
-        self.indComment.$add({
-          comment: self.editedComment.comment
-        });
-        self.indComment = '';
-      //  self.indComment.$add(self.editedComment);
-        self.editing = false;
-        self.editedComment = {};
-      };
-
-      this.editing = false;
-      this.editedComment = {};
-
-      self.inputField = function() {
-        return self.editing = true;
-      };
-
-      // self.doneEditing = function(edit) {
-      //   self.editedComment = null;
-      //   var title = edit.comments.trim();
-      //   if (title) {
-      //     self.comments.$save(edit);
-      //   } else {
-      //     self.removeComment(edit);
-      //   }
+      // self.editComment = function(endpoint) {
+      //   var commentEndpoint = new Firebase('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '/comments/' + endpoint);
+      //   self.indComment = $firebaseObject(commentEndpoint);
+      //   console.log('endpoint', endpoint);
+      //   console.log('hi', self.indComment);
+      //   self.indComment.comment = '';
+      //   console.log('hi', self.indComment);
+      //   self.indComment.$add({
+      //     comment: self.editedComment.comment
+      //   });
+      //   self.indComment = '';
+      // //  self.indComment.$add(self.editedComment);
+      //   self.editing = false;
+      //   self.editedComment = {};
       // };
       //
-      // self.revertEditing = function(edit) {
-      //   edit.comment = self.originalComment.title;
-      //   self.doneEditing(edit);
+      // this.editing = false;
+      // this.editedComment = {};
+      //
+      // self.inputField = function() {
+      //   return self.editing = true;
       // };
+
+      self.editComment = function(edit) {
+        console.log('what');
+        self.editedComment = edit;
+        self.originalComment = angular.extend({}, self.editedComment);
+      };
+
+      self.doneEditing = function(edit) {
+        self.editedComment = null;
+        var comment = edit.comment.trim();
+        if (comment) {
+          self.comments.$save(edit);
+        } else {
+          self.removeComment(edit);
+        }
+      };
+
+      self.revertEditing = function(edit) {
+        edit.comment = self.originalComment.title;
+        self.doneEditing(edit);
+      };
+
+      self.removeComment = function(edit) {
+        self.comments.$remove(edit);
+      };
 
       pullData();
     });

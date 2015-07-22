@@ -3,7 +3,7 @@
   'use strict';
 
   angular.module('nightmare')
-    .controller('StopController', function($http, $routeParams, $firebaseArray, $firebaseObject) {
+    .controller('StopController', function($http, $routeParams, $firebaseArray) {
 
       this.stop = {};
       var self = this;
@@ -28,28 +28,6 @@
         pullData();
       };
 
-      // self.editComment = function(endpoint) {
-      //   var commentEndpoint = new Firebase('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '/comments/' + endpoint);
-      //   self.indComment = $firebaseObject(commentEndpoint);
-      //   console.log('endpoint', endpoint);
-      //   console.log('hi', self.indComment);
-      //   self.indComment.comment = '';
-      //   console.log('hi', self.indComment);
-      //   self.indComment.$add({
-      //     comment: self.editedComment.comment
-      //   });
-      //   self.indComment = '';
-      // //  self.indComment.$add(self.editedComment);
-      //   self.editing = false;
-      //   self.editedComment = {};
-      // };
-      //
-      // this.editing = false;
-      // this.editedComment = {};
-      //
-      // self.inputField = function() {
-      //   return self.editing = true;
-      // };
 
       this.edit = null;
 
@@ -59,10 +37,9 @@
         var commentEndpoint = new Firebase('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '/comments/' + endpoint);
         self.indComment = $firebaseArray(commentEndpoint);
         console.log(self.indComment);
-        //stop.tempName = stops.comment;
-        // self.editedComment = edit;
-        // self.originalComment = angular.extend({}, self.editedComment);
       };
+
+      // got most of how to edit a comment from http://jsfiddle.net/wiesson/whw89oa7/
 
       self.editComments = function(index, comment, event) {
         // key-enter
@@ -70,37 +47,18 @@
         if (event.keyCode === 13) {
           self.edit = null;
 
-            /*
-            $http.put('customers/' + customer.id, customer).success(function () {
-                customer.editing = false;
-            }) */
+          /*
+          $http.put('customers/' + customer.id, customer).success(function () {
+              customer.editing = false;
+          }) */
         }
         // key-esc, do nothing and revert
         else if (event.keyCode === 27) {
-            // todo, revert to old name
-            self.edit = false;
+          // todo, revert to old name
+          self.edit = false;
           //  customer.name = customer.tempName;
         }
-    };
-
-      // self.doneEditing = function(edit) {
-      //   self.editedComment = null;
-      //   var comment = edit.comment.trim();
-      //   if (comment) {
-      //     self.comments.$save(edit);
-      //   } else {
-      //     self.removeComment(edit);
-      //   }
-      // };
-      //
-      // self.revertEditing = function(edit) {
-      //   edit.comment = self.originalComment.title;
-      //   self.doneEditing(edit);
-      // };
-      //
-      // self.removeComment = function(edit) {
-      //   self.comments.$remove(edit);
-      // };
+      };
 
       pullData();
     });

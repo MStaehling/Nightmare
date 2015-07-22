@@ -53,32 +53,54 @@
 
       this.edit = false;
 
-      self.editComment = function(stop) {
+      self.editComment = function(endpoint) {
         console.log('what');
         self.edit = true;
+        var commentEndpoint = new Firebase('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '/comments/' + endpoint);
+        self.indComment = $firebaseArray(commentEndpoint);
+        console.log(self.indComment);
         //stop.tempName = stops.comment;
         // self.editedComment = edit;
         // self.originalComment = angular.extend({}, self.editedComment);
       };
 
-      self.doneEditing = function(edit) {
-        self.editedComment = null;
-        var comment = edit.comment.trim();
-        if (comment) {
-          self.comments.$save(edit);
-        } else {
-          self.removeComment(edit);
+      self.editComments = function(index, comment, event) {
+        // key-enter
+        console.log('hi');
+        if (event.keyCode === 13) {
+          self.edit = false;
+
+            /*
+            $http.put('customers/' + customer.id, customer).success(function () {
+                customer.editing = false;
+            }) */
         }
-      };
+        // key-esc, do nothing and revert
+        else if (event.keyCode === 27) {
+            // todo, revert to old name
+            self.edit = false;
+          //  customer.name = customer.tempName;
+        }
+    };
 
-      self.revertEditing = function(edit) {
-        edit.comment = self.originalComment.title;
-        self.doneEditing(edit);
-      };
-
-      self.removeComment = function(edit) {
-        self.comments.$remove(edit);
-      };
+      // self.doneEditing = function(edit) {
+      //   self.editedComment = null;
+      //   var comment = edit.comment.trim();
+      //   if (comment) {
+      //     self.comments.$save(edit);
+      //   } else {
+      //     self.removeComment(edit);
+      //   }
+      // };
+      //
+      // self.revertEditing = function(edit) {
+      //   edit.comment = self.originalComment.title;
+      //   self.doneEditing(edit);
+      // };
+      //
+      // self.removeComment = function(edit) {
+      //   self.comments.$remove(edit);
+      // };
 
       pullData();
     });

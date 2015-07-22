@@ -2,15 +2,17 @@
 <div class="address">
   <h5>Stop</h5>
   <h6>{{show.stop.stop}}</h6>
-  <h5>Street Address<h5>
-    <h6>{{show.stop.street}}</h6>
-  <h5>City</h5>
-  <h6>{{show.stop.city}}</h6>
-  <h5>State</h5>
-  <h6>{{show.stop.state}}</h6>
-  <h5>Zip Code</h5>
-  <h6>{{show.stop.zipCode}}</h6>
-</div><!-- .address -->
+  <h5>Street Address
+    <h5>
+      <h6>{{show.stop.street}}</h6>
+      <h5>City</h5>
+      <h6>{{show.stop.city}}</h6>
+      <h5>State</h5>
+      <h6>{{show.stop.state}}</h6>
+      <h5>Zip Code</h5>
+      <h6>{{show.stop.zipCode}}</h6>
+</div>
+<!-- .address -->
 <div class="select-questions">
   <h5>Are there any security camera's on site?</h5>
   <select id="camera" name="camera" ng-model="show.stop.camera">
@@ -26,31 +28,48 @@
   <select id="security" name="security" ng-model="show.stop.security">
     <option>yes</option>
     <option>no</option>
-  </select><br>
+  </select>
+  <br>
   <h5>Is the stop well lit?</h5>
   <select id="light" name="light" ng-model="show.stop.light">
     <option>yes</option>
     <option>no</option>
-  </select><br>
+  </select>
+  <br>
   <h5>Is there overnight parking available?</h5>
   <select id="parking" name="parking" ng-model="show.stop.parking">
     <option>yes</option>
     <option>no</option>
-  </select><br>
+  </select>
+  <br>
   <h5>Are there any hazards to be aware of whether they are driving related, like low hanging branches, or actual delivery, a stop might have extremely slippery floors? Please explain.</h5>
   <p>{{show.stop.hazards}}</p>
-</div><!-- .select-questions -->
+</div>
+<!-- .select-questions -->
 <div class="delivery">
   <h5>Is there unique delivery instructions for this stop whether it is a delivery time window or a not so obvious way to make the delivery like a service entrance is on a different block then the normal entrance.</h5>
   <p>{{show.stop.deliveryInstructions}}</p>
-</div><!-- .delivery -->
-<div class="comments row cmt" ng-repeat="(id, stops) in show.stop.comments">
-  <p ng-model="show.stops.comment">{{stops.comment}}</p>
-</div><!-- .comments -->
+</div>
+<!-- .delivery -->
+<div class="comments row cmt view" ng-repeat="stops in show.stopComment">
+
+  <p ng-dblclick="show.inputField(stops)" class="ng-binding" ng-model="show.stops.comment">{{stops.comment}}</p>
+<span ng-hide="customer.editing" ng-dblclick="editItem(stops)">{{stops.comment}}</span>
+
+                <label ng-show="customer.editing">
+                    <input type="text" ng-model="customer.name" ng-blur="doneEditing(customer)" ng-keyup="editCustomer($index, customer, $event)" />
+                </label>
+  <input ng-show="show.editing = comment">
+  <!-- <form ng-show="show.editing" ng-submit="show.editComment(stops.$id)" class="ng-valid ng-dirty ng-submitted">
+    <input class="edit ng-valid ng-touched ng-dirty" ng-model="show.editedComment.comment" todo-escape="revertEditing(edit)" todo-blur="doneEditing(edit)" todo-focus="edit == editedComment">
+  </form> -->
+</div>
+<!-- .comments -->
 <form ng-submit="show.submit()">
   <div class="info">
     <h5 for="info">If there's any additional information that hasn't been mentioned please put it here.</h5>
     <textarea ng-model="show.comment" style="width:100%" id="info" name="info"></textarea>
-  </div><!-- .info -->
-  <input type="submit" id="submit" value="Submit" class="pull-right"/>
+  </div>
+  <!-- .info -->
+  <input type="submit" id="submit" value="Submit" class="pull-right" />
 </form>

@@ -51,11 +51,11 @@
       //   return self.editing = true;
       // };
 
-      this.edit = false;
+      this.edit = null;
 
-      self.editComment = function(endpoint) {
+      self.editComment = function(endpoint, stops) {
         console.log('what');
-        self.edit = true;
+        self.edit = stops;
         var commentEndpoint = new Firebase('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '/comments/' + endpoint);
         self.indComment = $firebaseArray(commentEndpoint);
         console.log(self.indComment);
@@ -68,7 +68,7 @@
         // key-enter
         console.log('hi');
         if (event.keyCode === 13) {
-          self.edit = false;
+          self.edit = null;
 
             /*
             $http.put('customers/' + customer.id, customer).success(function () {

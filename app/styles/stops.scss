@@ -1,6 +1,14 @@
+small {
+  margin: 20px;
+  font-size: .8em;
+}
 .comments {
-  p {
-    padding-left: 30px;
-    padding-right: 15px;
+  margin-top: 20px;
+  .view {
+    label {
+      padding-left: 30px;
+      padding-right: 15px;
+      width: 100%;
+    }
   }
 }

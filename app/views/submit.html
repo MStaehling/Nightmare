@@ -126,7 +126,7 @@ function geolocate() {
   </div>
   <!-- .address -->
   <div class="select-questions">
-    <label for="camera">Are there any security camera's on site?</label>
+    <label for="camera">Are there any security cameras on site?</label>
     <select class="form-control" ng-model="list.camera" id="camera" name="camera">
       <option>yes</option>
       <option>no</option>
@@ -154,17 +154,17 @@ function geolocate() {
       <option>no</option>
     </select>
     <br>
-    <label for="hazards">Are there any hazards to be aware of whether they are driving related, like low hanging branches, or actual delivery, a stop might have extremely slippery floors? Please explain.</label>
+    <label for="hazards">Are there any hazards to be aware of such as low hanging branches or extremely slippery floors? Please explain.</label>
     <textarea ng-model="list.hazards" style="width:100%" id="hazards" name="hazards"></textarea>
   </div>
   <!-- .select-questions -->
   <div class="delivery">
-    <label for="delivery_instructions">Is there unique delivery instructions for this stop whether it is a delivery time window or a not so obvious way to make the delivery like a service entrance is on a different block then the normal entrance.</label>
+    <label for="delivery_instructions">Are there unique delivery instructions for this stop such as a limited delivery time window or information about a separate service entrance?</label>
     <textarea ng-model="list.deliveryInstructions" style="width:100%" id="delivery_instructions" name="delivery_instructions"></textarea>
   </div>
   <!-- .delivery -->
   <div class="info">
-    <label for="info">If there's any additional information that hasn't been mentioned please put it here.</label>
+    <label for="info">If there is any additional information that has not been mentioned, please include it here.</label>
     <textarea ng-model="list.info" style="width:100%" id="info" name="info"></textarea>
   </div>
   <!-- .info -->

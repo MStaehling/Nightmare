@@ -6,7 +6,15 @@
 
 
   angular.module('nightmare')
-    .controller('SubmitController', function ($firebaseArray) {
+    .controller('SubmitController', function ($http, $routeParams, $firebaseArray) {
+      // function pullData() {
+      //   $http.get('https://fiery-inferno-4540.firebaseio.com/' + $routeParams.stop + '.json')
+      //     .then(function(response) {
+      //       self.stop = response.data;
+      //       console.log('hi', response);
+      //     });
+      // }
+
     function empty(answer) {
       if (answer) {
         return answer;
